@@ -23,10 +23,10 @@ class Program
         jungle.plus(4,5, out int plusplus);//Class içindeki a ve b değerine 4 ve 5 değerini atadık
         Console.WriteLine(plusplus);//Sonucu Plusplus değer adı ile out ettik
         int methoding =999;
-        jungle.Writeforscreen(Convert.ToString(methoding));
+        jungle.Writeforscreen(Convert.ToString(methoding));//String veri tipine çevirdik
         jungle.Writeforscreen(methoding);
         jungle.Writeforscreen("Taha","BÖREKCİ");
-        
+                              // ko1-  k02 //
     
         
 

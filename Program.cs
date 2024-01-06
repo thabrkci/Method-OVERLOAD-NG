@@ -1,62 +1,62 @@
-﻿namespace Method_OVERLOADİNG;
+﻿using System;
 
-class Program
+namespace MethodOverloading
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("_--_-_-_Out Parametres_-__-_");
-        string plus = "999";
-        bool hand = int.TryParse(plus ,out int outplus);//string veri tipindeki sayıyı tryparse ile "out"
-        //yardımı ile int veri tipine çevirdik if ile çevirebilirse yazmasını çeviremez ise else ile yazdırmasını sağladık.
-        if(hand)
+        static void Main(string[] args)
         {
-        Console.WriteLine("Winner");
-        Console.WriteLine(outplus);
-        }
-        else
-        {
-            Console.WriteLine("Don't Winner");
-        }
- 
-        //Method aşırı yükleme
-        methodlistş jungle = new methodlistş();//Class kullandık
-        jungle.plus(4,5, out int plusplus);//Class içindeki a ve b değerine 4 ve 5 değerini atadık
-        Console.WriteLine(plusplus);//Sonucu Plusplus değer adı ile out ettik
-        int methoding =999;
-        jungle.Writeforscreen(Convert.ToString(methoding));//String veri tipine çevirdik
-        jungle.Writeforscreen(methoding);
-        jungle.Writeforscreen("Taha","BÖREKCİ");
-                              // ko1-  k02 //
-    
-        
+            Console.WriteLine("_--_-_-_Out Parameters_-__-_");
 
+            string inputString = "999";
+            bool parsingSuccessful = int.TryParse(inputString, out int parsedValue);
+            
+            if (parsingSuccessful)
+            {
+                Console.WriteLine("Winner");
+                Console.WriteLine(parsedValue);
+            }
+            else
+            {
+                Console.WriteLine("Don't Winner");
+            }
+
+            // Method Overloading
+            MethodList jungle = new MethodList();
+            jungle.Plus(4, 5, out int plusResult);
+            Console.WriteLine("Result of Plus method: " + plusResult);
+
+            int intValue = 999;
+            jungle.WriteForScreen(Convert.ToString(intValue));
+            jungle.WriteForScreen(intValue);
+            jungle.WriteForScreen("Taha", "BÖREKCİ");
+        }
+    }
+
+    class MethodList
+    {
+        // Method with out parameter
+        public void Plus(int a, int b, out int result)
+        {
+            result = a + b;
+        }
+
+        // Method to write a string to the console
+        public void WriteForScreen(string output)
+        {
+            Console.WriteLine(output);
+        }
+
+        // Method to write an integer to the console
+        public void WriteForScreen(int output)
+        {
+            Console.WriteLine(output);
+        }
+
+        // Method to concatenate and write two strings to the console
+        public void WriteForScreen(string str1, string str2)
+        {
+            Console.WriteLine(str1 + str2);
+        }
     }
 }
-
-class methodlistş
-{
- public void plus(int a, int b,out int pluss)//Out ile int çıkışı sağladık a ve b değeri için
- {
-  pluss = a+b;
- }
-
- public void Writeforscreen(string down)
- {
-  Console.WriteLine(down);
- }
-
- public void Writeforscreen(int down)
- {
-  Console.WriteLine(down);
- }
-
- public void Writeforscreen(string ko1 , string ko2)
- {
-  Console.WriteLine(ko1 + ko2);
- }
-
-
-
-
-
- }
